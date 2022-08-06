@@ -1,4 +1,24 @@
+# F를 사용한 코드
+# 거의 모두 완벽하게 작동
+m, f, n = map(int,input().split())
+tmp = n-f+1
+res = 0
 
+if f == 1:
+  res = 0
+else:
+  res = 1
+  tmp -= min(tmp%(m-1), (m-f))
+
+if tmp//(m-1) == 0:
+  if tmp%(m-1) != 0:
+    res += 1
+else:
+  res += tmp//(m-1)
+  if tmp%(m-1) != 0:
+    res += 1
+
+print(res)
 
 # F를 사용하지 않은 코드 
 # 작동을 하긴 하지만 문제가 있을 수 있음
