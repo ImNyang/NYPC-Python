@@ -1,29 +1,29 @@
 # F를 사용한 코드
 # 거의 모두 완벽하게 작동
-m, f, n = map(int,input().split())
-tmp = n-f+1
-res = 0
+m, f, n = map(int,input().split()) #배찌가 살고 있는 건물의 층수 (m) / 배찌가 사는 층수(f) / 배찌가 오르고 싶은 계단의 총 층수(n)
+tmp = n-f+1 # tmp에 n-f+1 한 값을 넣는다.
+res = 0 # 빈 int형 res 값을 만든다
 
-if f == 1:
-  res = 0
-else:
-  res = 1
-  tmp -= min(tmp%(m-1), (m-f))
+if f == 1: # 만약 배찌가 사는 층수(f)가 1이라면...
+  res = 0 # 빈 int형 res값을 저장합니다.
+else: # 아니라면...
+  res = 1 # 1이 담긴 int형 res값을 저장합니다.
+  tmp -= min(tmp%(m-1), (m-f)) # tmp값을 tmp - (temp%(m-1) - (m-f))의 최솟값을 넣는다.
 
-if tmp//(m-1) == 0:
-  if tmp%(m-1) != 0:
-    res += 1
-else:
-  res += tmp//(m-1)
-  if tmp%(m-1) != 0:
-    res += 1
+if tmp//(m-1) == 0: # 만약 tmp / (m-1)의 몫이 0이라면...
+  if tmp%(m-1) != 0: # 만약 tmp / (m-1)의 나머지 값이 0이 아니라면...
+    res += 1 # res값을 res + 1로 만든다.
+else: # 아니라면...
+  res += tmp//(m-1) # res값을 res + tmp/(m-1)의 값으로 정한다.
+  if tmp%(m-1) != 0: # 만약 tmp/(m-1)의 나머지가 0이 아니라면
+    res += 1 #res값을 res + 1로 만든다.
 
-print(res)
+print(res) # res를 출력한다.
 
 # F를 사용하지 않은 코드 
 # 작동을 하긴 하지만 문제가 있을 수 있음
 '''
-M, F, N = map(int, input().split()) #배찌가 살고 있는 건물의 층수 / 배찌가 사는 층수 / 배찌가 오르고 싶은 계단의 총 층수
+M, F, N = map(int, input().split()) #배찌가 살고 있는 건물의 층수 (m) / 배찌가 사는 층수(f) / 배찌가 오르고 싶은 계단의 총 층수(n)
 
 elv = 1 #엘리베이터를 탄 횟수의 기본 값을 1로 한다. (처음에 1층으로 가야하기 때문)
 
