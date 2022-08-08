@@ -13,8 +13,10 @@ print(f"Can_week : {can_week}")
 res = [[0 for col in range(workday)] for row in range(dev)] # res값의 workday를 행으로 dev를 줄로 해서 2차원 리스트를 만듭니다.
 print(f"Res : {res}") # Debug
 
-l.sort(reverse=True)
-t.sort()
+always_dev_in.sort(reverse=True)
+can_week.sort()
+
+
 
 # 2중 for문으로 리스트 모두 출력
 for i in res: # 리스트의 값을 i로 꺼냅니다.
