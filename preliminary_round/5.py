@@ -22,4 +22,6 @@ for i in range(1, 8):
 print(canvas)
 '''
 print(color_count)
-print(f"H")
+temp = 0
+print(f"H {temp} {temp}")
+print(f"V {temp} {temp}")
