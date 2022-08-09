@@ -4,10 +4,6 @@ N, M = map(int, input().split())
 canvas = []
 color_count = 0
 
-''' # Debug
-print(canvas)
-'''
-
 for i in range(M):
     templist = list(map(int, input().split()))
     canvas.append(templist)
@@ -18,6 +14,11 @@ for i in range(1, 8):
     else:
         pass
 
+for i in range(N):
+    temp = 0
+    for j in range(M):
+        if not temp and canvas[i][j]:
+            temp = canvas[i][j]
 ''' # Debug
 print(canvas)
 '''
