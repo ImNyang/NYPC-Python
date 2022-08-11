@@ -1,25 +1,25 @@
-N, K = map(int, input().split()) # 폭탄의 개수를 나타내는 정수(N) / 폭탄의 범위를 나타내는 정수 (K)
-A = list(map(int, input().split())) # A에 list
+from queue import PriorityQueue
 
-bumpcount = N
+N,K=map(int,input().split())
+l=list (map(int,input().split()))
 
-res = 0
+que=PriorityQueue()
+for i in range(N):que.put([l[i],i])
 
-A.sort()
+st=[0]*(N+1)
+ch=0
+cnt=N
+ans=0
 
-for i in range(N):
-    res = res + 1
-    if A[i] >= A[0]:
-        if bumpcount == 0:
-            break
-        else:
-            bumpcount -= A[i]
-            res = res + 1
-            del A[i]
-    else:
-        pass
+while ch!=N and cnt!=0:
+    s=que.get()
+    cnt-=1
+    if st[s[1]]==0:
+        ans+=1
+        left=s[1]-1
+        right=s[1]+1
+        st[s[1]]=1
+        while left>=0 and st[left]==0 and s[0]<=l[left]<=s[0]+K:ch+=1;st[left]=1;left-=1
+        while right<N and st[right]==0 and s[0]<=l[right]<=s[0]+K:ch+=1;st[right]=1;right+=1
 
-bumpcount -= A[0] 
-del A[0]
-
-print(res)
+print(ans)
