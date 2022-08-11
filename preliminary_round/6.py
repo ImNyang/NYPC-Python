@@ -1,6 +1,6 @@
-from queue import PriorityQueue
+from queue import PriorityQueue # queue 라이브러리를 불러옵니다.
 
-N,K=map(int,input().split())
+N,K=map(int,input().split()) # N, K
 l=list (map(int,input().split()))
 
 que=PriorityQueue()

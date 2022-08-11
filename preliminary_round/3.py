@@ -1,4 +1,4 @@
-a,b=map(int,input().split())
+a,b=map(int,input().split()) # a,b에 입력받은 값을 넣습니다.
 
 l=list(map(int,input().split()))
 l=[[l[i],i+1]for i in range(a)]
