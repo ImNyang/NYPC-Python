@@ -1,4 +1,4 @@
-import sys,math
+import sys,math # sys와 math 라이브러리를 불러옵니다.
 sys.setrecursionlimit(10**9)
 inf=math.inf
 input=sys.stdin.readline
